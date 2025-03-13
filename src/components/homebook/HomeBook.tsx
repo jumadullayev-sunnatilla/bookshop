@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Product } from "../../types";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 const HomeBook = () => {
   const [loading, setLoading] = useState<Boolean>(false);
   const [data, setData] = useState<Product[] | null>(null);
@@ -23,8 +24,10 @@ const HomeBook = () => {
           alt={product.name}
           className="w-[300px] h-[283px] object-cover"
         />
-        <h2 className="text-xl font-bold mt-2">{product.name}</h2>
-        <h3 className="text-md text-gray-700">{product.author}</h3>
+        <NavLink to={`/product/${product.id}`}>
+          <h2 className="text-xl font-bold mt-2">{product.name}</h2>
+          <h3 className="text-md text-gray-700">{product.author}</h3>
+        </NavLink>
       </div>
     )
   );

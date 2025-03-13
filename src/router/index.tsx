@@ -4,6 +4,7 @@ import About from "../pages/about/About";
 import Layout from "../pages/layout/Layout";
 import Shop from "../pages/shop/Shop";
 import Manage from "../pages/manage/Manage";
+import Detail from "../pages/detail/Detail";
 const Routers = () => {
   return (
     <>
@@ -35,7 +36,7 @@ const Routers = () => {
             },
             {
               path: "/product/:id",
-              element: <div>detail</div>,
+              element: <Detail />,
             },
           ],
         },
